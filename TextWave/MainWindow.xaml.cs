@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -8,18 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TextWeb;
-using TextLib;
 
-
-namespace TextWave; 
+namespace TextWave;
 /// <summary>
-/// Interaction logic for MainWindow.xaml
+/// Lógica de interacción para Login.xaml
 /// </summary>
 public partial class MainWindow : Window {
-    
     public MainWindow() {
         InitializeComponent();
-        main_frame.Navigate(new Uri("Login.xaml", UriKind.Relative));
+        
     }
+
+
 }

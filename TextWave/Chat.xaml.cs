@@ -40,14 +40,11 @@ namespace TextWave {
             };
 
             Canvas.SetRight(textMessage, 10);
-            Canvas.SetBottom(textMessage, 35 * chat_box.Children.Count);
+            Canvas.SetBottom(textMessage, 35 + textMessage.Height * chat_box.Children.Count);
 
             chat_box.Children.Add(textMessage);
 
-            //MessageBox.Show("MENSAJE ENVIADO");
-
             Console.WriteLine("Mensaje enviado");
-
         }
     }
 }

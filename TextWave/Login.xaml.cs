@@ -13,29 +13,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TextWave;
+namespace TextWave; 
 /// <summary>
-/// Lógica de interacción para Login.xaml
+/// Lógica de interacción para Chat.xaml
 /// </summary>
-public partial class Login : Window {
+public partial class Login : Page {
     public Login() {
         InitializeComponent();
+        //main_frame.Navigate(new Uri("Login.xaml", UriKind.Relative));
     }
 
-    private void IniciarSesion_Click(object sender, RoutedEventArgs e) {
+    private void LogIn_Click(object sender, RoutedEventArgs e) {
         string getID = id.Text;
         string getPass = password.Text;
 
-        if (getID == "100000000" && getPass == "12345678") {
-            //NavigationService.Navigate(new Uri("MainWindow.xaml", UriKind.Relative));
+
+        if (getID == "1" && getPass == "1") {
+            MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
+            if (mainWindow != null)
+                mainWindow.main_frame.Navigate(new Uri("Chat.xaml", UriKind.Relative));
         }
-
-
-
-
     }
 
-    public static void LogIn() {
-        
-    }
+    private void SignUp_Click(object sender, RoutedEventArgs e) { }
 }
