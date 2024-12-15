@@ -27,7 +27,6 @@ public partial class Login : Page {
         string getID = id.Text;
         string getPass = password.Text;
 
-
         if (getID == "1" && getPass == "1") {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;
             if (mainWindow != null)
@@ -35,5 +34,8 @@ public partial class Login : Page {
         }
     }
 
-    private void SignUp_Click(object sender, RoutedEventArgs e) { }
+    private void SignUp_Click(object sender, RoutedEventArgs e) {
+        Window popup = new SignUpPopUp();
+        popup.Show();
+    }
 }
