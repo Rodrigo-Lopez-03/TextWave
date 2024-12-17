@@ -18,8 +18,11 @@ namespace TextWave;
 /// Lógica de interacción para Chat.xaml
 /// </summary>
 public partial class Chat : Page {
+    private static int? id;
+    Login login = new Login();
     public Chat() {
         InitializeComponent();
+        id = login.GetID();
     }
 
     private void SendMessage(object sender, RoutedEventArgs e) {

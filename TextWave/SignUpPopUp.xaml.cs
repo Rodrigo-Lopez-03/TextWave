@@ -25,13 +25,17 @@ namespace TextWave {
             string getName = name_entry.Text;
             string getEmail = email_entry.Text;
             string getPassword = password_entry.Text;
-            string generateID = "";
+            string? generateID = "";
             var rand = new Random();
-            
+            var textLib = new TextLib.Connection();
+
             if (getName != "" && getEmail != "" && getPassword != "") {
-                for(int i = 0; i < 10; i++) {
-                    generateID += rand.Next(1, 10).ToString();  
-                }
+                generateID = textLib.CreateUser(getName, getEmail, getPassword);
+                MessageBox.Show("Usuario creado exitosamente", $"Tu ID es: {generateID}");
+            }
+            else {
+                MessageBox.Show("Datos incorrectos", 
+                    "Faltan datos o algun campo es incorrecto, revisa los campos");
             }
         }
     }
