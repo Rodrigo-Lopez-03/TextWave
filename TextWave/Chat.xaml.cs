@@ -20,6 +20,7 @@ namespace TextWave;
 public partial class Chat : Page {
     private static int? id;
     Login login = new Login();
+
     public Chat() {
         InitializeComponent();
         id = login.GetID();
