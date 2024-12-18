@@ -24,6 +24,7 @@ public partial class Chat : Page {
         InitializeComponent();
         id = login.GetID();
     }
+
     private void SendMessage(object sender, RoutedEventArgs e) {
         if (string.IsNullOrWhiteSpace(text_entry.Text))
             return;
