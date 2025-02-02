@@ -33,10 +33,29 @@ public class Connection {
         }
     }
 
-    public string GetUserID() {
-        string userID = "";
+    public string? GetUserID() {
+        string? userID = "";
+        
+        using (conn) {
+            try {  
+                conn.Open();
 
-        return userID;
+                string query = $"SELECT LAST_INSERT_ID();";
+                using (var command = new MySqlCommand(query, conn)) {
+                    userID = command.ExecuteScalar().ToString();
+                    return userID;
+                }
+                
+            }
+            
+            catch {
+                return null;
+            }
+        }
+
+
+
+        
     }
 
 

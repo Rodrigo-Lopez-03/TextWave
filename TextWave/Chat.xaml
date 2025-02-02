@@ -11,15 +11,17 @@
     <Grid>
         <Canvas x:Name="window" Background="Orange" Width="800" Height="450">
             <Canvas x:Name="chat_bar" Background="Blue" Width="250" 
-Height="450" Canvas.Right="550"></Canvas>
+                    Height="450" Canvas.Right="550"></Canvas>
             <Canvas x:Name="chat_screen" Background="Green" Height="450" 
-Width="550" Canvas.Left="250">
+                    Width="550" Canvas.Left="250">
                 <Canvas x:Name="contact_info" Background="Orange" Width="550" Height="30">
 
                 </Canvas>
                 <Label Background="White">Nombre</Label>
                 <Label Background="White">Nombre</Label>
-                <Canvas x:Name="chat_box" Canvas.Right="0" Canvas.Bottom="60"></Canvas>
+                <Canvas x:Name="chat_box" Canvas.Right="0" Canvas.Bottom="60">
+                    <ListBox x:Name="message_list"/> 
+                </Canvas>
                 <Canvas Canvas.Right="0" Canvas.Bottom="0">
                     <TextBox x:Name="text_entry" Background="Red"
     Height="25" Width="500" Canvas.Bottom="10" Canvas.Right="25"></TextBox>
