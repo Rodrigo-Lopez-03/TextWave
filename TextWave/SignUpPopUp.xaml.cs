@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,22 +21,32 @@ namespace TextWave {
             InitializeComponent();
         }
 
-        public void SignUp() {
+        public void SignUp(object sender, RoutedEventArgs e) {
             string getName = name_entry.Text;
             string getEmail = email_entry.Text;
             string getPassword = password_entry.Text;
+            bool user = false;
             string? generateID = "";
-            var rand = new Random();
             var textLib = new TextLib.Connection();
 
             if (getName != "" && getEmail != "" && getPassword != "") {
-                generateID = textLib.CreateUser(getName, getEmail, getPassword);
-                MessageBox.Show("Usuario creado exitosamente", $"Tu ID es: {generateID}");
+                user = textLib.CreateUser(getName, getEmail, getPassword);
+                //MessageBox.Show("Usuario creado exitosamente", $"Tu ID es: {generateID}");
             }
             else {
-                MessageBox.Show("Datos incorrectos", 
+                MessageBox.Show("Error al crear usuario", "Existen campos incorrectos o incompletos, " +
+                    "por favor revisalo de nuevo");
+                return;
+            }
+
+            if (user) {
+                generateID = textLib.GetUserID();
+                
+            } else {
+                MessageBox.Show("Datos incorrectos",
                     "Faltan datos o algun campo es incorrecto, revisa los campos");
             }
+
         }
     }
 }

@@ -30,8 +30,8 @@ public partial class Login : Page {
     private void LogIn_Click(object sender, RoutedEventArgs e) {
         string getID = id.Text;
         string getPass = password.Text;
-        
-        bool canLog = textLib.LogIn(getID, getPass);
+
+        bool canLog = true; //textLib.LogIn(getID, getPass);
 
         if (canLog) {
             MainWindow? mainWindow = Application.Current.MainWindow as MainWindow;

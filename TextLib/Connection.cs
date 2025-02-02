@@ -12,7 +12,7 @@ public class Connection {
     static string Uid = "root;";
     static string password = ";";
 
-    public string CreateUser(string user, string email, string password) {
+    public bool CreateUser(string user, string email, string password) {
         using (conn) {
             try {
                 conn.Open();
@@ -26,13 +26,19 @@ public class Connection {
                     insertedID = command.ExecuteScalar().ToString();
                 }
                 
-                return query;
+                return true;
             }
-            catch (Exception) {
-                return "Error al crear usuario";
-            }
+            catch (Exception) { }
+            return false;
         }
     }
+
+    public string GetUserID() {
+        string userID = "";
+
+        return userID;
+    }
+
 
     public bool LogIn(string id, string pass) {
         string?[] result = [];
@@ -50,12 +56,10 @@ public class Connection {
                 if (queryPass == pass) {
                     return true;
                 }
-                else return false;
             }
         }
-        catch (Exception) {
-            return false;
-        }
+        catch (Exception) { }
 
+        return false;
     }
 }

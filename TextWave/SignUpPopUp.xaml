@@ -26,6 +26,6 @@
         <TextBox x:Name="password_entry" Grid.Row="2" Grid.Column="1"/>
 
         <Button Content="Confirmar" x:Name="confirm_button" Grid.Row="3" Grid.Column="0" 
-                Click="SignUp"/>
+                Click="SignUp"/> 
     </Grid>
 </Window>

@@ -19,6 +19,7 @@ namespace TextWave;
 /// </summary>
 public partial class Chat : Page {
     private static int? id;
+    private static int? userID;
     Login login = new Login();
 
     public Chat() {
@@ -29,19 +30,31 @@ public partial class Chat : Page {
     private void SendMessage(object sender, RoutedEventArgs e) {
         if (string.IsNullOrWhiteSpace(text_entry.Text))
             return;
-        SolidColorBrush bubbleColor = new SolidColorBrush(Colors.SkyBlue);
+        SolidColorBrush userBubbleColor = new SolidColorBrush(Colors.SkyBlue);
+        SolidColorBrush senderBubbleColor = new SolidColorBrush(Colors.Wheat);
         string message = text_entry.Text;
         text_entry.Clear();
 
         TextBlock textMessage = new TextBlock {
             Name = "chat_bubble",
             Text = message,
-            Background = bubbleColor,
+            Background = userBubbleColor,
             Width = 200,
             HorizontalAlignment = HorizontalAlignment.Left,
             TextWrapping = TextWrapping.Wrap,
             Padding = new Thickness(5)
         };
+
+        if (id == userID) {
+            textMessage.Background = userBubbleColor;
+            textMessage.HorizontalAlignment = HorizontalAlignment.Right;
+        }
+        else {
+            textMessage.Background = senderBubbleColor;
+            textMessage.HorizontalAlignment = HorizontalAlignment.Left;
+        }
+
+        
 
         Canvas.SetRight(textMessage, 10);
         Canvas.SetBottom(textMessage, 35 + textMessage.Height * chat_box.Children.Count);
