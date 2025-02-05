@@ -8,15 +8,9 @@ namespace TextWave;
 /// Lógica de interacción para Chat.xaml
 /// </summary>
 public partial class Chat : Page {
-    MainWindow mainWindow = new MainWindow();
-    Login login = new Login();
-
-    private static int? id;
-    private readonly static int? userID;
 
     public Chat() {
         InitializeComponent();
-        id = login.GetID();
     }
 
     private void SendMessage(object sender, RoutedEventArgs e) {
@@ -38,14 +32,14 @@ public partial class Chat : Page {
             Padding = new Thickness(5)
         };
 
-        if (id == userID) {
-            textMessage.Background = userBubbleColor;
-            textMessage.HorizontalAlignment = HorizontalAlignment.Right;
-        }
-        else {
-            textMessage.Background = senderBubbleColor;
-            textMessage.HorizontalAlignment = HorizontalAlignment.Left;
-        }
+        //if (id == userID) {
+        //    textMessage.Background = userBubbleColor;
+        //    textMessage.HorizontalAlignment = HorizontalAlignment.Right;
+        //}
+        //else {
+        //    textMessage.Background = senderBubbleColor;
+        //    textMessage.HorizontalAlignment = HorizontalAlignment.Left;
+        //}
 
 
 

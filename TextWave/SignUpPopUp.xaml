@@ -6,26 +6,28 @@
         xmlns:local="clr-namespace:TextWave"
         mc:Ignorable="d"
         Title="SignUpPopUp" Height="450" Width="800">
-    <Grid>
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="75"/>
-            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Nombre:" Grid.Row="0" Grid.Column="0"/>
-        <Label Content="Correo:" Grid.Row="1" Grid.Column="0"/>
-        <Label Content="Contraseña" Grid.Row="1" Grid.Column="0"/>
+        <Label Content="Nombre:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+        <Label Content="Correo:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+        <Label Content="Contraseña" Grid.Row="2" Grid.Column="0" Margin="5"/>
 
-        <TextBox x:Name="name_entry" Grid.Row="0" Grid.Column="1"/>
-        <TextBox x:Name="email_entry" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="password_entry" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="name_entry" Grid.Row="0" Grid.Column="1" Width="150" Margin="5"/>
+        <TextBox x:Name="email_entry" Grid.Row="1" Grid.Column="1" Width="150" Margin="5"/>
+        <TextBox x:Name="password_entry" Grid.Row="2" Grid.Column="1" Width="150" Margin="5"/>
 
         <Button Content="Confirmar" x:Name="confirm_button" Grid.Row="3" Grid.Column="0" 
-                Click="SignUp"/> 
+                Margin="20"  Width="80" Click="SignUp"/>
+        <Button Content="Cancelar" x:Name="cancel_button" Grid.Row="3" Grid.Column="1" 
+                Margin="20" Width="80" Click="Cancel"/>
     </Grid>
 </Window>

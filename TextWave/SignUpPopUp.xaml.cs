@@ -48,5 +48,9 @@ namespace TextWave {
             }
 
         }
+
+        public void Cancel(object sender, RoutedEventArgs e) {
+
+        }
     }
 }
