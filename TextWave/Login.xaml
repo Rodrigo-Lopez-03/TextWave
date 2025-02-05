@@ -9,38 +9,27 @@
       Title="Chat">
 
     <Grid>
-        <Canvas x:Name="login_canvas" HorizontalAlignment="Center" 
-        VerticalAlignment="Center">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="75"/>
-                    <ColumnDefinition Width="75"/>
-                    <ColumnDefinition Width="75"/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0">ID:</Label>
-                <Label Grid.Row="1" Grid.Column="0">Contraseña:</Label>
-                <Canvas Grid.Row="0" Grid.Column="1" Width="75" Height="75">
-                    <TextBox x:Name="id" Width="75" HorizontalAlignment="Center" 
-                 VerticalAlignment="Center"></TextBox>
-                </Canvas>
-                <Canvas Grid.Row="1" Grid.Column="1" Width="75" Height="75">
-                    <TextBox x:Name="password" Width="75" HorizontalAlignment="Center" 
-                 VerticalAlignment="Center"></TextBox>
-                </Canvas>
-                <Canvas Grid.Row="2" Grid.Column="0">
-                    <Button x:Name="sign_in"
-                    Click="LogIn_Click" Content="Iniciar sesion"/>
-                </Canvas>
-                <Canvas Grid.Row="2" Grid.Column="1">
-                    <Button x:Name="sign_up" 
-                    Click="SignUp_Click"  Content="Registrarse"/>
-                </Canvas>
-            </Grid>
-        </Canvas>
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">ID:</Label>
+            <TextBox x:Name="id" Grid.Row="0" Grid.Column="1" Width="150" Margin="5"/>
+
+            <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Contraseña:</Label>
+            <PasswordBox x:Name="password" Grid.Row="1" Grid.Column="1" Width="150" Margin="5"/>
+
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+                <Button x:Name="sign_in" Click="LogIn_Click" Content="Iniciar sesión" Margin="5"/>
+                <Button x:Name="sign_up" Click="SignUp_Click" Content="Registrarse" Margin="5"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

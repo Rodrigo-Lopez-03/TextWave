@@ -15,36 +15,10 @@ using System.Windows.Shapes;
 using Microsoft.AspNetCore.SignalR.Client;
 
 namespace TextWave;
-/// <summary>
-/// Lógica de interacción para Login.xaml
-/// </summary>
-public partial class MainWindow : Window {
-    private Chat chatWindow;
-    public HubConnection _connection;
 
+public partial class MainWindow : Window {
 
     public MainWindow() {
         InitializeComponent();
-        InitializeSignalR();
     }
-
-    private async void InitializeSignalR() {
-        _connection = new HubConnectionBuilder().WithUrl("").Build();
-
-        _connection.On<string, string>("Receive Message", (user, message) => {
-            Dispatcher.Invoke(() => {
-                var newMessage = $"{user}: {message}";
-                chatWindow.message_list.Items.Add(newMessage);
-            });
-        });
-
-        try {
-            await _connection.StartAsync();
-            chatWindow.message_list.Items.Add("Connection Started.");
-        }catch(Exception ex) {
-            chatWindow.message_list.Items.Add($"Error  {ex.Message}");
-        }
-    }
-
-
 }

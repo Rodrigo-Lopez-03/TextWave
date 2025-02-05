@@ -29,7 +29,7 @@ public partial class Login : Page {
 
     private void LogIn_Click(object sender, RoutedEventArgs e) {
         string getID = id.Text;
-        string getPass = password.Text;
+        string getPass = password.Password;
 
         bool canLog = true; //textLib.LogIn(getID, getPass);
 

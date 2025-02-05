@@ -20,7 +20,7 @@
                 <Label Background="White">Nombre</Label>
                 <Label Background="White">Nombre</Label>
                 <Canvas x:Name="chat_box" Canvas.Right="0" Canvas.Bottom="60">
-                    <ListBox x:Name="message_list"/> 
+                    <ListBox x:Name="message_list"></ListBox> 
                 </Canvas>
                 <Canvas Canvas.Right="0" Canvas.Bottom="0">
                     <TextBox x:Name="text_entry" Background="Red"
